@@ -1,0 +1,131 @@
+body {
+    background: rgb(36, 35, 35);
+    overflow-x: hidden;
+    font-family: 'Style Script', cursive;
+}
+
+h2 {
+    color: white;
+    text-align: center;
+    font-size: 60px
+}
+
+#wire {
+    text-align: center;
+    position: absolute;
+    width: 100%;
+    white-space: nowrap;
+    border-top: 1px solid #eee;
+}
+
+#wire li {
+    position: relative;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: inline-block;
+    width: 15px;
+    height: 30px;
+    background: #fff;
+    border-radius: 50%;
+    margin: 0 20px;
+    animation: flash 1s infinite, wind 10s infinite;
+
+
+}
+
+#wire li:nth-child(odd) {
+    animation: odd-flash 1s infinite;
+}
+
+#wire li::before {
+    content: "";
+    width: 14px;
+    height: 10px;
+    background: rgb(63, 62, 62);
+    position: absolute;
+    left: 0;
+    border-radius: 3px;
+}
+
+
+
+@keyframes flash {
+
+    0%,
+    100% {
+        background: rgba(240, 230, 35, 1);
+        box-shadow: 0 1px 2px rgba(240, 230, 35, 1)
+    }
+
+    50% {
+        background: rgba(240, 230, 35, 0.5);
+        box-shadow: 0 1px 2px rgba(240, 230, 35, 0.3);
+    }
+}
+
+
+@keyframes odd-flash {
+
+    0%,
+    100% {
+        background: rgb(240, 35, 189, 1);
+        box-shadow: 0 1px 2px rgba(240, 35, 1895, 1)
+    }
+
+    50% {
+        background: rgba(240, 35, 189, 0.5);
+        box-shadow: 0 1px 2px rgba(240, 35, 189, 0.3);
+    }
+}
+
+@keyframes wind {
+
+    0% {
+        transform: rotate(0);
+    }
+
+    5% {
+        transform: rotate(1deg);
+    }
+
+    10% {
+        transform: rotate(4deg);
+    }
+
+    15% {
+        transform: rotate(5deg);
+    }
+
+    20% {
+        transform: rotate(7deg);
+    }
+
+    25% {
+        transform: rotate(9deg);
+    }
+
+    30% {
+        transform: rotate(6deg);
+    }
+
+    35% {
+        transform: rotate(3deg);
+    }
+
+    40% {
+        transform: rotate(2deg);
+    }
+
+    45% {
+        transform: rotate(1deg);
+    }
+
+    50% {
+        transform: rotate(-2);
+    }
+
+    100% {
+        transform: rotate(-3);
+    }
+}
